@@ -1,7 +1,7 @@
 import '../model/naturales_model.dart';
 
 class NaturalesController {
-  List<double> numeros = [];
+  List<int> numeros = [];
 
 
   String determinarNumeros(String numerosIngresados) {
@@ -12,9 +12,9 @@ class NaturalesController {
     }
 
     for (String numero in numerosIngresados.split(",")){
-      double? numeroDouble = double.tryParse(numero);
-      if (numeroDouble == null) {
-        return 'Debe ingresar SOLAMENTE números';
+      int? numeroDouble = int.tryParse(numero);
+      if ((numeroDouble == null) || (numeroDouble < 0)) {
+        return 'Debe ingresar SOLAMENTE números NATURALES';
       }
       numeros.add(numeroDouble);
     }

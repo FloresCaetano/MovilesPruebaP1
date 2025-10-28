@@ -1,5 +1,5 @@
 class NaturalesModel {
-  List<double> numeros = [];
+  List<int> numeros = [];
 
   NaturalesModel(this.numeros);
 
@@ -7,10 +7,10 @@ class NaturalesModel {
     int menoresQuince = 0;
     int mayoresCincuenta = 0;
     int entre25y45 = 0;
-    double total = 0;
+    int total = 0;
     double promedio = 0;
 
-    for (double numero in numeros) {
+    for (int numero in numeros) {
       if (numero < 15) menoresQuince++;
       if (numero > 50) mayoresCincuenta++;
       if (numero >= 25 && numero <= 45) entre25y45++;
