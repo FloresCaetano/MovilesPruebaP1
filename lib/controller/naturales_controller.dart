@@ -12,7 +12,11 @@ class NaturalesController {
     }
 
     for (String numero in numerosIngresados.split(",")){
-      numeros.add(double.parse(numero));
+      double? numeroDouble = double.tryParse(numero);
+      if (numeroDouble == null) {
+        return 'Debe ingresar SOLAMENTE números';
+      }
+      numeros.add(numeroDouble);
     }
 
     final naturalesModel = new NaturalesModel(numeros);
